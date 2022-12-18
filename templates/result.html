@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% block body %}
 <h1>Result</h1>
-<p>{{outputText}}</p>
+<div class="mb-3" style="height: 16rem">
+  <textarea readonly class="col-10 h-100">{{outputText}}</textarea>
+</div>
 {% endblock %}
