@@ -1,14 +1,13 @@
 {% extends 'base.html' %} {% block body %}
-
-<h1>Enter text in Cyrillic below</h1>
-<form method="POST" action="transliterate">
-  {% csrf_token %}
-  <div class="mb-3" style="height: 16rem">
-    <textarea name="inputText" class="col-10 h-100"></textarea>
-  </div>
-  <div class="row justify-content-center">
-    <input type="submit" class="btn btn-primary col-2" />
-  </div>
-</form>
+    <h1>Enter text in Cyrillic below</h1>
+    <form method="POST" action="transliterate">
+      {% csrf_token %}
+      <div class="mb-3" style="height: 16rem">
+        <textarea name="inputText" class="col-10 h-100"></textarea>
+      </div>
+      <div class="row justify-content-center">
+        <input type="submit" class="btn btn-primary col-2" />
+      </div>
+    </form>
 
 {% endblock %}
