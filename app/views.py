@@ -45,12 +45,17 @@ def transliterate(request):
             "Ь": "\'",
             "Э": "E",
             "Ю": "YU",
-            "Я": "YA",
+            "Я": "Yа",
         }
 
         # for each char in text, convert
         for char in inputText:
-            outputText += transcriptions[char]
+            uppercaseChar = char.upper()
+            if uppercaseChar in transcriptions:
+                outputText += transcriptions[uppercaseChar] if char.isupper(
+                ) else transcriptions[uppercaseChar].lower()
+            else:
+                outputText += char
 
         # inputText is being used for testing; temporary
         return render(request, 'result.html', {'outputText': outputText})
