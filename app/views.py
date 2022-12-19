@@ -48,7 +48,6 @@ def transliterate(request):
             "Я": "Yа",
         }
 
-        # for each char in text, convert
         for char in inputText:
             uppercaseChar = char.upper()
             if uppercaseChar in transcriptions:
@@ -57,5 +56,4 @@ def transliterate(request):
             else:
                 outputText += char
 
-        # inputText is being used for testing; temporary
         return render(request, 'result.html', {'outputText': outputText})
